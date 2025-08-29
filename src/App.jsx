@@ -4,6 +4,7 @@ function App() {
   const [enabled, setEnabled] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
+  // Update mouse position on pointer move
   useEffect(() => {
     const handleMouseMove = (event) => {
       setMousePosition({ x: event.clientX, y: event.clientY })
@@ -15,6 +16,15 @@ function App() {
 
     return () => {
       window.removeEventListener("pointermove", handleMouseMove)
+    }
+  }, [enabled])
+
+  // change body class based on enabled state
+  useEffect(() => {
+    if (enabled) {
+      document.body.classList.add("tracking")
+    } else {
+      document.body.classList.remove("tracking")
     }
   }, [enabled])
 

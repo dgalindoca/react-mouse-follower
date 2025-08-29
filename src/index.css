@@ -70,6 +70,6 @@ button:focus-visible {
   }
 }
 
-body.no-cursor {
+body.tracking {
   cursor: none;
 }
