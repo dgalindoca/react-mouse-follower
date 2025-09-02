@@ -19,6 +19,10 @@ function App() {
     }
   }, [enabled])
 
+  // [] -> Executes once on mount
+  // [enabled] -> Executes on mount and when enabled state changes
+  // undefined -> Executes on every render
+
   // change body class based on enabled state
   useEffect(() => {
     if (enabled) {
